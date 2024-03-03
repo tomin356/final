@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <center>
+    Name of the customer:{{user}}
+    <br>
+    <br>
+    {% for i in o %}
+    <table class="table table-bordered" style="color:black;">
+        <tr>
+            <td> <center><img height="250px" width="250px" src="{{i.product.pic.url}}"></center></td>
+           <td>
+               <p><b>Order adress:</b>{{i.adress}}</p>
+            <p><b>Customer phone:</b>{{i.phone}}</p>
+            <p><b>Product name:</b>{{i.product.title}}</p>
+            <p><b>Product price:</b>{{i.product.price}}</p>
+               <p><b>Order status:</b>{{i.date_ordered}}</p>
+               <p><b>Delivery Status:</b>{{i.delivery_status}}</p>
+           </td>
+
+         <br>
+        {% endfor %}
+        </tr>
+    </table>
+    </center>
+</div>
+{% endblock %}
